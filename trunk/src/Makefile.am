@@ -31,7 +31,8 @@ aiof_SOURCES = \
 	zernike.cpp \
 	zernike.h \
 	interface.h \
-	typedefs.h
+	typedefs.h \
+	CImg.h
 
 aiof_CPPFLAGS = \
   $(DEPS_CFLAGS)
