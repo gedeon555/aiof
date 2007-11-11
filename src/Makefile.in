@@ -196,6 +196,7 @@ INCLUDES = \
 	-DPACKAGE_SRC_DIR=\""$(srcdir)"\" \
 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" 
 
+EXTRA_DIST = aiof.glade
 AM_CFLAGS = \
 	 -Wall\
 	 -g
@@ -216,7 +217,8 @@ aiof_SOURCES = \
 	zernike.cpp \
 	zernike.h \
 	interface.h \
-	typedefs.h
+	typedefs.h \
+	CImg.h
 
 aiof_CPPFLAGS = \
   $(DEPS_CFLAGS)
