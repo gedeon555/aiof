@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<gtodo>
+  <category title="Urgent" place="0">
+    <item>
+      <attribute id="1194806315" priority="1" done="0" start_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1194806315"/>
+      <summary>Clarifier les r&#xE9;sultats</summary>
+      <comment>Am&#xE9;liorer l'affichage des r&#xE9;sultats de la reconnaissance pour les rendre plus lisibles</comment>
+    </item>
+  </category>
+  <category title="Important" place="1">
+    <item>
+      <attribute id="1193585208" priority="1" done="1" start_date="732977" completed_date="732983" notify="0" last_edited="1194108373"/>
+      <summary>R&#xE9;parer la Back Propagation</summary>
+      <comment>Lorsque la base d'apprentissage ne contient qu'une image, qu'on lance l'apprentissage sur cette base avec un nombre d'it&#xE9;ration &#xE9;gal &#xE0; 5000 et qu'on essaie de reconnaitre la m&#xEA;me image, on obtient pas du tout les bons r&#xE9;sultats.</comment>
+    </item>
+    <item>
+      <attribute id="1193585126" priority="1" done="1" start_date="732977" completed_date="732983" notify="0" last_edited="1194108377"/>
+      <summary>Lecture du fichier de configuration</summary>
+      <comment>Lire le fichier de configuration dans Recognition_Engine au lieu de Perceptron</comment>
+    </item>
+    <item>
+      <attribute id="1194806149" priority="1" done="0" start_date="732991" notify="0" last_edited="1194806152"/>
+      <summary>Debugage</summary>
+      <comment>Prendre en compte le comportement "d&#xE9;bile" de l'utilisateur</comment>
+    </item>
+    <item>
+      <attribute id="1194806190" priority="1" done="0" start_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1194806190"/>
+      <summary>QT4</summary>
+      <comment>Cr&#xE9;er une interface compatible QT4</comment>
+    </item>
+    <item>
+      <attribute id="1194806176" priority="1" done="1" start_date="732991" completed_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1194806196"/>
+      <summary>GTK</summary>
+      <comment>Cr&#xE9;er une interface compatible GTK</comment>
+    </item>
+    <item>
+      <attribute id="1194806263" priority="1" done="0" start_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1194806263"/>
+      <summary>ANN personnalis&#xE9;s</summary>
+      <comment>Permettre &#xE0; l'utilisateur de personnaliser chaque r&#xE9;seau de neurones (nombre d'entr&#xE9;es, epsilon, ...)</comment>
+    </item>
+  </category>
+  <category title="Autre" place="2"/>
+</gtodo>
