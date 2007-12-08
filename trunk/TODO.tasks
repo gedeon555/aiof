@@ -2,9 +2,24 @@
 <gtodo>
   <category title="Urgent" place="0">
     <item>
-      <attribute id="1194806315" priority="1" done="0" start_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1194806315"/>
-      <summary>Clarifier les r&#xE9;sultats</summary>
-      <comment>Am&#xE9;liorer l'affichage des r&#xE9;sultats de la reconnaissance pour les rendre plus lisibles</comment>
+      <attribute id="1197142912" priority="1" done="0" start_date="733018" enddate="99999999" notify="0" endtime="-60" last_edited="1197142912"/>
+      <summary>Sortie du r&#xE9;seau de neurones</summary>
+      <comment>Transformer la sortie du r&#xE9;seau de neurone pour renvoyer une unique valeur comprise entre 0 et 1 repr&#xE9;sentant l'appartenance de l'objet &#xE0; la classe du r&#xE9;seau.</comment>
+    </item>
+    <item>
+      <attribute id="1197143370" priority="1" done="0" start_date="733018" enddate="99999999" notify="0" endtime="-60" last_edited="1197143370"/>
+      <summary>Grossir la base d'apprentissage</summary>
+      <comment>Grossir la base d'apprentissage en prenant de nouvelles photos et en g&#xE9;n&#xE9;rant de nouvelles images en retouchant les images existantes (bruit, flou, ...)</comment>
+    </item>
+    <item>
+      <attribute id="1197144661" priority="1" done="0" start_date="733018" enddate="99999999" notify="0" endtime="-60" last_edited="1197145197"/>
+      <summary>Configuration l'installation</summary>
+      <comment>Faire en sorte qu'apr&#xE8;s la commande "make install", l'application trouve le fichier glade, installe les fichiers de configurations, etc.</comment>
+    </item>
+    <item>
+      <attribute id="1197142995" priority="1" done="0" start_date="733018" enddate="99999999" notify="0" endtime="-60" last_edited="1197150247"/>
+      <summary>Param&#xE8;tres du r&#xE9;seau</summary>
+      <comment>Ajouter des param&#xE8;tres (augmentation d'epsilon en cas de bouclage de l'apprentissage, par exemple) et chercher leur meilleur valeur : Algorithme g&#xE9;n&#xE9;tique ?</comment>
     </item>
   </category>
   <category title="Important" place="1">
@@ -14,30 +29,46 @@
       <comment>Lorsque la base d'apprentissage ne contient qu'une image, qu'on lance l'apprentissage sur cette base avec un nombre d'it&#xE9;ration &#xE9;gal &#xE0; 5000 et qu'on essaie de reconnaitre la m&#xEA;me image, on obtient pas du tout les bons r&#xE9;sultats.</comment>
     </item>
     <item>
-      <attribute id="1193585126" priority="1" done="1" start_date="732977" completed_date="732983" notify="0" last_edited="1194108377"/>
-      <summary>Lecture du fichier de configuration</summary>
-      <comment>Lire le fichier de configuration dans Recognition_Engine au lieu de Perceptron</comment>
-    </item>
-    <item>
-      <attribute id="1194806149" priority="1" done="0" start_date="732991" notify="0" last_edited="1194806152"/>
-      <summary>Debugage</summary>
-      <comment>Prendre en compte le comportement "d&#xE9;bile" de l'utilisateur</comment>
-    </item>
-    <item>
       <attribute id="1194806190" priority="1" done="0" start_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1194806190"/>
       <summary>QT4</summary>
       <comment>Cr&#xE9;er une interface compatible QT4</comment>
-    </item>
-    <item>
-      <attribute id="1194806176" priority="1" done="1" start_date="732991" completed_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1194806196"/>
-      <summary>GTK</summary>
-      <comment>Cr&#xE9;er une interface compatible GTK</comment>
     </item>
     <item>
       <attribute id="1194806263" priority="1" done="0" start_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1194806263"/>
       <summary>ANN personnalis&#xE9;s</summary>
       <comment>Permettre &#xE0; l'utilisateur de personnaliser chaque r&#xE9;seau de neurones (nombre d'entr&#xE9;es, epsilon, ...)</comment>
     </item>
+    <item>
+      <attribute id="1194806315" priority="0" done="0" start_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1197150150"/>
+      <summary>Clarifier les r&#xE9;sultats</summary>
+      <comment>Am&#xE9;liorer l'affichage des r&#xE9;sultats de la reconnaissance pour les rendre plus lisibles.</comment>
+    </item>
+    <item>
+      <attribute id="1194806176" priority="1" done="1" start_date="732991" completed_date="733018" enddate="99999999" notify="0" endtime="-60" last_edited="1197150159"/>
+      <summary>GTK</summary>
+      <comment>Cr&#xE9;er une interface GTK.</comment>
+    </item>
+    <item>
+      <attribute id="1193585126" priority="1" done="1" start_date="732977" completed_date="733018" enddate="99999999" notify="0" endtime="-60" last_edited="1197150165"/>
+      <summary>Lecture du fichier de configuration</summary>
+      <comment>Lire le fichier de configuration dans Recognition_Engine au lieu de Perceptron.</comment>
+    </item>
+    <item>
+      <attribute id="1194806149" priority="1" done="0" start_date="732991" enddate="99999999" notify="0" endtime="-60" last_edited="1197150322"/>
+      <summary>Debugage</summary>
+      <comment>Prendre en compte le comportement "d&#xE9;bile" de l'utilisateur comme par exemple laisser des champs obligatoires vides.</comment>
+    </item>
   </category>
-  <category title="Autre" place="2"/>
+  <category title="Autre" place="2">
+    <item>
+      <attribute id="1197142961" priority="1" done="0" start_date="733018" enddate="99999999" notify="0" endtime="-60" last_edited="1197150200"/>
+      <summary>Triples r&#xE9;seaux de neurones</summary>
+      <comment>Cr&#xE9;er trois r&#xE9;seaux de neurones par classe pour chaque composante R,G,B des pixels (peut-&#xEA;tre trop lent).</comment>
+    </item>
+    <item>
+      <attribute id="1197143500" priority="1" done="0" start_date="733018" enddate="99999999" notify="0" endtime="-60" last_edited="1197150290"/>
+      <summary>Sp&#xE9;cialiser les r&#xE9;seaux de neurones</summary>
+      <comment>Passer toutes les images sur TOUS les r&#xE9;seaux de neurones (en suspent : ca rendrait le syst&#xE8;me plus du tout incr&#xE9;mental).</comment>
+    </item>
+  </category>
 </gtodo>
