@@ -1,9 +1,9 @@
 
 [Anjuta]
-Geometry=1680x977+0+47
+Geometry=1680x975+5+49
 
 [File Loader]
-Files=
+Files=file:///home/benji/Projects/aiof/src/perceptron.cpp#306%%%file:///home/benji/Projects/aiof/src/zernike.cpp#23%%%file:///home/benji/Projects/aiof/src/zernike.h#24%%%file:///home/benji/Projects/aiof/src/main.cpp#31%%%file:///home/benji/Projects/aiof/src/recognition_engine.h#32%%%file:///home/benji/Projects/aiof/src/perceptron.h#28%%%file:///home/benji/Projects/aiof/src/recognition_engine.cpp#50%%%file:///home/benji/Projects/aiof/src/gaiof.cpp#171%%%file:///home/benji/Projects/aiof/src/typedefs.h#1
 
 [Execution]
 Program arguments=

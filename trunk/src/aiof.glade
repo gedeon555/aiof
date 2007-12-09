@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.0 on Sat Dec  8 22:19:05 2007 -->
+<!--Generated with glade3 3.4.0 on Sun Dec  9 10:50:55 2007 -->
 <glade-interface>
   <widget class="GtkWindow" id="main_window">
     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -281,11 +281,11 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkHBox" id="learn_dialog_nb_inputs_hbox">
+              <widget class="GtkHBox" id="learn_dialog_input_size_hbox">
                 <property name="visible">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <child>
-                  <widget class="GtkLabel" id="learn_dialog_nb_inputs_label">
+                  <widget class="GtkLabel" id="learn_dialog_input_size_label">
                     <property name="visible">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="label" translatable="yes">Number of Zernike moments : </property>
@@ -295,7 +295,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkSpinButton" id="learn_dialog_nb_inputs_spinbutton">
+                  <widget class="GtkSpinButton" id="learn_dialog_input_size_spinbutton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -309,7 +309,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkButton" id="learn_dialog_nb_inputs_default_button">
+                  <widget class="GtkButton" id="learn_dialog_input_size_default_button">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
@@ -319,7 +319,7 @@
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_learn_dialog_nb_inputs_default_button_clicked"/>
                     <child>
-                      <widget class="GtkImage" id="learn_dialog_nb_inputs_default_image">
+                      <widget class="GtkImage" id="learn_dialog_input_size_default_image">
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                         <property name="icon_size">1</property>
@@ -338,11 +338,11 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkHBox" id="learn_dialog_nb_hiddens_hbox">
+              <widget class="GtkHBox" id="learn_dialog_hidden_size_hbox">
                 <property name="visible">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <child>
-                  <widget class="GtkLabel" id="learn_dialog_nb_hiddens_label">
+                  <widget class="GtkLabel" id="learn_dialog_hidden_size_label">
                     <property name="visible">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="label" translatable="yes">Number of neurons in the hidden layer : </property>
@@ -352,7 +352,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkSpinButton" id="learn_dialog_nb_hiddens_spinbutton">
+                  <widget class="GtkSpinButton" id="learn_dialog_hidden_size_spinbutton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -366,7 +366,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkButton" id="learn_dialog_nb_hiddens_default_button">
+                  <widget class="GtkButton" id="learn_dialog_hidden_size_default_button">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
@@ -376,10 +376,9 @@
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_learn_dialog_nb_hiddens_default_button_clicked"/>
                     <child>
-                      <widget class="GtkImage" id="learn_dialog_nb_hiddens_default_image">
+                      <widget class="GtkImage" id="learn_dialog_hidden_size_default_image">
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="stock">gtk-missing-image</property>
                         <property name="icon_size">1</property>
                         <property name="icon_name">emblem-default</property>
                       </widget>
@@ -396,11 +395,11 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkHBox" id="learn_dialog_initial_epsilon_hbox">
+              <widget class="GtkHBox" id="learn_dialog_epsilon_initial_hbox">
                 <property name="visible">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <child>
-                  <widget class="GtkLabel" id="learn_dialog_initial_epsilon_label">
+                  <widget class="GtkLabel" id="learn_dialog_epsilon_initial_label">
                     <property name="visible">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="label" translatable="yes">Initial Epsilon : </property>
@@ -410,7 +409,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkSpinButton" id="learn_dialog_initial_epsilon_spinbutton">
+                  <widget class="GtkSpinButton" id="learn_dialog_epsilon_initial_spinbutton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -425,7 +424,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkButton" id="learn_dialog_initial_epsilon_default_button">
+                  <widget class="GtkButton" id="learn_dialog_epsilon_initial_default_button">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
@@ -433,12 +432,11 @@
                     <property name="has_tooltip">True</property>
                     <property name="tooltip_text">Default</property>
                     <property name="response_id">0</property>
-                    <signal name="clicked" handler="on_learn_dialog_initial_epsilon_default_button_clicked"/>
+                    <signal name="clicked" handler="on_learn_dialog_epsilon_initial_default_button_clicked"/>
                     <child>
-                      <widget class="GtkImage" id="learn_dialog_initial_epsilon_default_image">
+                      <widget class="GtkImage" id="learn_dialog_epsilon_initial_default_image">
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="stock">gtk-missing-image</property>
                         <property name="icon_size">1</property>
                         <property name="icon_name">emblem-default</property>
                       </widget>
@@ -497,7 +495,6 @@
                       <widget class="GtkImage" id="learn_dialog_epsilon_drop_default_image">
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="stock">gtk-missing-image</property>
                         <property name="icon_size">1</property>
                         <property name="icon_name">emblem-default</property>
                       </widget>
@@ -514,11 +511,11 @@
               </packing>
             </child>
             <child>
-              <widget class="GtkHBox" id="learn_dialog_nb_iter_eps_hbox">
+              <widget class="GtkHBox" id="learn_dialog_nb_iter_epsilon_hbox">
                 <property name="visible">True</property>
                 <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                 <child>
-                  <widget class="GtkLabel" id="learn_dialog_nb_iter_eps_label">
+                  <widget class="GtkLabel" id="learn_dialog_nb_iter_epsilon_label">
                     <property name="visible">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
                     <property name="label" translatable="yes">Range between each epsilon drop : </property>
@@ -528,7 +525,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkSpinButton" id="learn_dialog_nb_iter_eps_spinbutton">
+                  <widget class="GtkSpinButton" id="learn_dialog_nb_iter_epsilon_spinbutton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
@@ -542,7 +539,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="GtkButton" id="learn_dialog_nb_iter_eps_default_button">
+                  <widget class="GtkButton" id="learn_dialog_nb_iter_epsilon_default_button">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
@@ -550,12 +547,11 @@
                     <property name="has_tooltip">True</property>
                     <property name="tooltip_text">Default</property>
                     <property name="response_id">0</property>
-                    <signal name="clicked" handler="on_learn_dialog_nb_iter_eps_default_button_clicked"/>
+                    <signal name="clicked" handler="on_learn_dialog_nb_iter_epsilon_default_button_clicked"/>
                     <child>
-                      <widget class="GtkImage" id="learn_dialog_nb_iter_eps_default_image">
+                      <widget class="GtkImage" id="learn_dialog_nb_iter_epsilon_default_image">
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="stock">gtk-missing-image</property>
                         <property name="icon_size">1</property>
                         <property name="icon_name">emblem-default</property>
                       </widget>
@@ -613,7 +609,6 @@
                       <widget class="GtkImage" id="learn_dialog_nb_iter_default_image">
                         <property name="visible">True</property>
                         <property name="events">GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK</property>
-                        <property name="stock">gtk-missing-image</property>
                         <property name="icon_size">1</property>
                         <property name="icon_name">emblem-default</property>
                       </widget>
@@ -879,8 +874,8 @@
     <property name="window_position">GTK_WIN_POS_CENTER_ON_PARENT</property>
     <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
     <property name="has_separator">False</property>
-    <property name="action">GTK_FILE_CHOOSER_ACTION_SAVE</property>
     <property name="do_overwrite_confirmation">True</property>
+    <property name="action">GTK_FILE_CHOOSER_ACTION_SAVE</property>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="save_file_dialog_vbox">
         <property name="visible">True</property>

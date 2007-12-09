@@ -26,19 +26,11 @@ public:
   ~Recognition_engine ();
 
   static Recognition_engine* get_engine();
-  void read_conf_file(string = "/etc/aiof/aiof.conf");
+  Perceptron* get_perceptron(string);
   void learn (string, string);
   void learn (vector < string >, string);
-  void save (string, string);
-  string load (string = "~/.aiof/");
+  string load (string);
   t_percents recognize (string);
-
-  int get_input_size() const;
-  int get_hidden_size() const;
-  double get_epsilon() const;
-  double get_k() const;
-  int get_nb_iter_epsilon() const;
-  int get_nb_iter() const;
 
 private:
   Recognition_engine ();
@@ -47,13 +39,6 @@ private:
 
 private:
   vector < Perceptron > classes_;
-
-  int input_size_;
-  int hidden_size_;
-  double epsilon_;
-  double k_;
-  int nb_iter_epsilon_;
-  int nb_iter_;
 };
 
 #endif /* !RECOGNITION_ENGINE_H_ */

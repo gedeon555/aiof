@@ -16,25 +16,45 @@
 #include "recognition_engine.h"
 #include "interface.h"
 
-Perceptron::Perceptron (Recognition_engine* parent, string classname)
+Perceptron::Perceptron ()
+{
+  this->input_size = 30;
+  this->hidden_size = 10;
+  this->epsilon_initial = 2.;
+  this->epsilon_drop = 0.9;
+  this->nb_iter_epsilon = 30;
+  this->nb_iter = 5000;
+}
+
+Perceptron::Perceptron (string classname)
+{
+  classname_ = classname;
+
+  this->input_size = 30;
+  this->hidden_size = 10;
+  this->epsilon_initial = 2.;
+  this->epsilon_drop = 0.9;
+  this->nb_iter_epsilon = 30;
+  this->nb_iter = 5000;
+}
+
+void Perceptron::init()
 {
   int i;
 
-  parent_ = parent;
-  randomize_weights ();
-  classname_ = classname;
-
-  for (i = 0; i < parent_->get_input_size(); ++i)
+  for (i = 0; i < input_size; ++i)
   {
     inputs_.push_back (*new Neuron);
     outputs_.push_back (*new Neuron);
   }
-  for (i = 0; i < parent_->get_hidden_size(); ++i)
+
+  for (i = 0; i < hidden_size; ++i)
   {
     hiddens_.push_back (*new Neuron);
   }
-}
 
+  randomize_weights ();
+}
 
 void Perceptron::randomize_weights ()
 {
@@ -62,17 +82,11 @@ void Perceptron::randomize_weights ()
   }
 }
 
-/*
-**
-*/
 Perceptron::~Perceptron ()
 {
 
 }
 
-/*
-**
-*/
 void Perceptron::learn (vector < string > files)
 {
   vector < vector < float > >moments;
@@ -85,8 +99,8 @@ void Perceptron::learn (vector < string > files)
   int num_example;
   float sum;
   float v, w;
-  double epsilon = parent_->get_epsilon();
-  int local_progress_range = parent_->get_nb_iter() / 100;
+  double epsilon = epsilon_initial;
+  int local_progress_range = nb_iter / 100;
   float progression = 0;
 
   progress_bar_set_total_value(0);
@@ -94,7 +108,7 @@ void Perceptron::learn (vector < string > files)
   {
     progression = ++i;
     progress_bar_set_local_value(0);
-    moments.push_back (Zernike::compute_moments (*file_it, parent_->get_input_size()));
+    moments.push_back (Zernike::compute_moments (*file_it, input_size));
     progress_bar_set_local_value(1);
     progress_bar_set_total_value(progression / (1 + files.size()));
   }
@@ -102,7 +116,7 @@ void Perceptron::learn (vector < string > files)
   progress_bar_set_local_value(0);
   progress_bar_set_current_text("Learning");
   progression = 0;
-  for (i = 0; i < parent_->get_nb_iter(); ++i)
+  for (i = 0; i < nb_iter; ++i)
   {
     if (i % local_progress_range == 0)
     {
@@ -110,9 +124,9 @@ void Perceptron::learn (vector < string > files)
       progress_bar_set_local_value(progression);
     }
 
-    if (j++ == parent_->get_nb_iter_epsilon())
+    if (j++ == nb_iter_epsilon)
     {
-      epsilon *= parent_->get_k();
+      epsilon *= epsilon_drop;
       j = 0;
     }
 
@@ -183,18 +197,16 @@ void Perceptron::learn (vector < string > files)
   progress_bar_set_total_value(1);
 }
 
-/*
- *
- */
 void Perceptron::process (vector < float >&moments)
 {
   neurons::iterator it, jt;
   vector < float >::iterator kt;
+	int i;
   float sum;
 
   // Copie des valeurs d'entrées sur la couche de neurones d'entrée
-  for (kt = moments.begin (), it = inputs_.begin (); 
-       kt != moments.end (); ++kt, ++it)
+  for (kt = moments.begin (), it = inputs_.begin (), i = 0; 
+       i < input_size; ++kt, ++it, ++i)
     it->set_value (*kt);
 
   // Calcul des valeurs des neurones dans la couche cachée
@@ -229,15 +241,46 @@ float Perceptron::recognize (vector < float >moments)
   return (compute_difference ());
 }
 
-
 string Perceptron::get_classname () const
 {
   return classname_;
 }
 
-/*
-**
-*/
+int Perceptron::get_input_size() const
+{
+	return this->input_size;
+}
+
+void Perceptron::set_input_size(int n)
+{
+	this->input_size = n;
+}
+
+void Perceptron::set_hidden_size(int n)
+{
+	this->hidden_size = n;
+}
+
+void Perceptron::set_epsilon_initial(float f)
+{
+	this->epsilon_initial = f;
+}
+
+void Perceptron::set_epsilon_drop(float f)
+{
+	this->epsilon_drop = f;
+}
+
+void Perceptron::set_nb_iter_epsilon(int n)
+{
+	this->nb_iter_epsilon = n;
+}
+
+void Perceptron::set_nb_iter(int n)
+{
+	this->nb_iter = n;
+}
+
 float Perceptron::compute_difference ()
 {
   float res = 0.;
@@ -260,7 +303,10 @@ void Perceptron::save (string path)
   neurons::iterator it, jt;
   fstream out (path.c_str (), fstream::out);
 
-  out << classname_ << endl << inputs_.size() << " " << hiddens_.size() << endl;
+  out << classname_ << endl 
+			<< this->input_size << " " << this->hidden_size << endl
+			<< this->epsilon_initial << " " << this->epsilon_drop << endl
+			<< this->nb_iter_epsilon << " " << this->nb_iter << endl << endl;
   
   if (out.good() == true)
   {
@@ -301,12 +347,16 @@ void Perceptron::load (string filename)
   float w;
   int input_size, hidden_size;
   int i;
-  char c;
+  char str[128];
+
+  in.getline(str, 128);
   
-  do in.get(c);
-  while (c != '\n');
-  
-  in >> input_size >> hidden_size;
+  this->classname_ = str;
+  in >> this->input_size >> this->hidden_size;
+	in >> this->epsilon_initial >> this->epsilon_drop;
+	in >> this->nb_iter_epsilon >> this->nb_iter;
+
+  init();
 
   for (it = inputs_.begin(); it != inputs_.end(); ++it)
   {

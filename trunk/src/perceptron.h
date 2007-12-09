@@ -25,9 +25,11 @@ using namespace std;
 class Perceptron
 {
 public:
-  Perceptron (Recognition_engine*, string);
+  Perceptron ();
+  Perceptron (string);
   ~Perceptron ();
 
+  void init();
   void learn (vector < string >);
   float recognize (vector < float >);
 
@@ -36,6 +38,14 @@ public:
   void load (string);
 
   string get_classname () const;
+
+	int get_input_size() const;
+	void set_input_size(int);
+	void set_hidden_size(int);
+	void set_epsilon_initial(float);
+	void set_epsilon_drop(float);
+	void set_nb_iter_epsilon(int);
+	void set_nb_iter(int);
 
 private:
   float compute_difference ();
@@ -48,6 +58,14 @@ private:
   neurons inputs_;
   neurons hiddens_;
   neurons outputs_;
+	
+	// Neural Network Parameters
+	int input_size;
+	int hidden_size;
+	float epsilon_initial;
+	float epsilon_drop;
+	int nb_iter_epsilon;
+	int nb_iter;
 
   string classname_;
   Recognition_engine* parent_;
