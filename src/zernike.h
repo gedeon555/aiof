@@ -22,7 +22,6 @@
 
 #include <iostream>
 #include <vector>
-#include <Imlib2.h>
 #include "CImg.h"
 
 using namespace cimg_library;
